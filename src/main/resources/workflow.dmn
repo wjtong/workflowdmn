@@ -50,20 +50,40 @@
       <dmn:output id="_A5F0C455-A01D-4926-A0AA-C56E72C6D203" name="nextTaskName" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_A4BF5135-50C3-4069-B5AA-5574718EA7D0">
-        <dmn:inputEntry id="_BA8A63A4-6F6E-43B1-B7AF-8782D6F787CB">
-          <dmn:text>-</dmn:text>
+        <dmn:inputEntry id="_D2E555D6-B0C3-4D29-9728-4D455B5C8A68">
+          <dmn:text>"First step"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_DA29F5D6-272D-4BE7-B11F-97BE54EE32A3">
-          <dmn:text>-</dmn:text>
+        <dmn:inputEntry id="_85986BCA-4AAE-4E72-8199-40CF42E76358">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_9CA7FFCE-8BBC-4DFE-A1E5-B5D05B00AF2A">
-          <dmn:text>-</dmn:text>
+        <dmn:inputEntry id="_195B07F9-5DBD-4CD7-A721-36A360090D2C">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_9EE10792-251F-42C0-AFD0-A7C379C77379">
-          <dmn:text/>
+        <dmn:outputEntry id="_705D08CE-A589-494E-8148-B6441C33C438">
+          <dmn:text>"ltdadmin"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_4C6CB8B3-CCEB-4624-A651-7C0CD4777F88">
+        <dmn:outputEntry id="_E20F0481-D672-4668-8A46-CD071A8B7794">
+          <dmn:text>"Second step"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
           <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_7ECDE17C-11E7-4D0A-B665-2315E76486C7">
+        <dmn:inputEntry id="_E152E56C-E30A-45CC-AC75-6AC0471E2EB8">
+          <dmn:text>"Second step"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_396DA908-0370-4796-A1D2-CB93D6173C2D">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_87F99CE9-AE25-4B25-98CF-6C7952E4B116">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7BE52938-DA92-4DF9-BBC1-FA17F4F56266">
+          <dmn:text>"externaluser"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_6B9C21BA-C994-4097-8C49-C9737F73BDEE">
+          <dmn:text>"Third step"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -77,6 +97,12 @@
         <kie:ComponentsWidthsExtension>
           <kie:ComponentWidths dmnElementRef="_0CAD049F-28CF-4AD8-AB75-99E4F70D0778">
             <kie:width>50</kie:width>
+            <kie:width>174</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>150</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
@@ -98,9 +124,9 @@
         <dc:Bounds x="627" y="286" width="100" height="50"/>
         <dmndi:DMNLabel/>
       </dmndi:DMNShape>
-      <dmndi:DMNEdge id="dmnedge-drg-_235D7CFC-7259-49C9-A357-5E0CB7516627-AUTO-TARGET" dmnElementRef="_235D7CFC-7259-49C9-A357-5E0CB7516627">
+      <dmndi:DMNEdge id="dmnedge-drg-_235D7CFC-7259-49C9-A357-5E0CB7516627" dmnElementRef="_235D7CFC-7259-49C9-A357-5E0CB7516627">
         <di:waypoint x="676" y="168"/>
-        <di:waypoint x="677" y="286"/>
+        <di:waypoint x="677" y="311"/>
       </dmndi:DMNEdge>
     </dmndi:DMNDiagram>
   </dmndi:DMNDI>
