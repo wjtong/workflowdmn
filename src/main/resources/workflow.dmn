@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_C7DD06AE-F36B-4625-9490-27F6C1A508EB" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_FC0E61D9-46EE-4750-BFF6-CA68BBD30C6D" name="workflow" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_C7DD06AE-F36B-4625-9490-27F6C1A508EB">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_862CE8BC-BDF4-4DF3-A60B-AF6DA0EB2B35" name="tWorkFlow" isCollection="false">
+    <dmn:itemComponent id="_63475CB5-01FF-4459-BF7D-9224EFD8D21A" name="statusId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_4596370F-7235-4E84-B6BB-EBF0F1FCCFDE" name="activeTaskName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C10FAB11-D9B4-4551-A2EB-723601D2DFBE" name="activeTaskStatusId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_7E6CD67E-8346-469F-A205-8A814B9E6318" name="tNextFlow" isCollection="false">
+    <dmn:itemComponent id="_950904E3-E54C-4942-9623-C8EA6DD90D18" name="nextTaskName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C1ECECF8-D3B5-4FFD-9E5F-9B4BF1EC2E3C" name="nextAsignee" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" name="WorkFlow">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A069D440-5D76-49ED-B5AF-1BAFF663828E" name="WorkFlow" typeRef="tWorkFlow"/>
+  </dmn:inputData>
+  <dmn:decision id="_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" name="NextFlow">
+    <dmn:extensionElements/>
+    <dmn:variable id="_3E7169C4-5D18-423C-890B-02B6CD20613A" name="NextFlow" typeRef="tNextFlow"/>
+    <dmn:informationRequirement id="_235D7CFC-7259-49C9-A357-5E0CB7516627">
+      <dmn:requiredInput href="#_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_0CAD049F-28CF-4AD8-AB75-99E4F70D0778" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_0F1A7346-D6AA-4000-A0F5-5A4703350572">
+        <dmn:inputExpression id="_9018C401-5DEC-4E47-B311-1B023E69D570" typeRef="string">
+          <dmn:text>WorkFlow.activeTaskName</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_CD9C5470-4D42-4DBD-909C-EDDD96411ACB">
+        <dmn:inputExpression id="_93546072-9DC9-49BA-93EA-BD2E9E33879D" typeRef="string">
+          <dmn:text>WorkFlow.activeTaskStatusId</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_2899CEA7-7AA8-4D2D-83A7-D28739EE64CE">
+        <dmn:inputExpression id="_E3B1B487-7FCC-40D4-B548-5AD602E88274" typeRef="string">
+          <dmn:text>WorkFlow.statusId</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_55B2B0D4-A91A-4904-BBE6-466CEAEE83CE" name="nextAsignee" typeRef="string"/>
+      <dmn:output id="_A5F0C455-A01D-4926-A0AA-C56E72C6D203" name="nextTaskName" typeRef="string"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_A4BF5135-50C3-4069-B5AA-5574718EA7D0">
+        <dmn:inputEntry id="_BA8A63A4-6F6E-43B1-B7AF-8782D6F787CB">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_DA29F5D6-272D-4BE7-B11F-97BE54EE32A3">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9CA7FFCE-8BBC-4DFE-A1E5-B5D05B00AF2A">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_9EE10792-251F-42C0-AFD0-A7C379C77379">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4C6CB8B3-CCEB-4624-A651-7C0CD4777F88">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_98B26244-D834-4381-AC4E-D936569AF838" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_0CAD049F-28CF-4AD8-AB75-99E4F70D0778">
+            <kie:width>50</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" dmnElementRef="_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="626" y="143" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" dmnElementRef="_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="627" y="286" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_235D7CFC-7259-49C9-A357-5E0CB7516627-AUTO-TARGET" dmnElementRef="_235D7CFC-7259-49C9-A357-5E0CB7516627">
+        <di:waypoint x="676" y="168"/>
+        <di:waypoint x="677" y="286"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
