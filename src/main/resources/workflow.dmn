@@ -12,11 +12,14 @@
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
-  <dmn:itemDefinition id="_7E6CD67E-8346-469F-A205-8A814B9E6318" name="tNextFlow" isCollection="false">
-    <dmn:itemComponent id="_950904E3-E54C-4942-9623-C8EA6DD90D18" name="nextTaskName" isCollection="false">
+  <dmn:itemDefinition id="_7E6CD67E-8346-469F-A205-8A814B9E6318" name="tNextFlow" isCollection="true">
+    <dmn:itemComponent id="_188FEAE9-64E3-490F-B5A4-9C3780DA9687" name="nextFlowName" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
-    <dmn:itemComponent id="_C1ECECF8-D3B5-4FFD-9E5F-9B4BF1EC2E3C" name="nextAsignee" isCollection="false">
+    <dmn:itemComponent id="_E43DC1A1-AD73-47CC-A328-71A86CBD2D81" name="nextAssignee" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_3FDF5523-89DB-44F2-8A40-E6F17145B9A2" name="nextStatusId" isCollection="false">
       <dmn:typeRef>string</dmn:typeRef>
     </dmn:itemComponent>
   </dmn:itemDefinition>
@@ -30,60 +33,90 @@
     <dmn:informationRequirement id="_235D7CFC-7259-49C9-A357-5E0CB7516627">
       <dmn:requiredInput href="#_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22"/>
     </dmn:informationRequirement>
-    <dmn:decisionTable id="_0CAD049F-28CF-4AD8-AB75-99E4F70D0778" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
-      <dmn:input id="_0F1A7346-D6AA-4000-A0F5-5A4703350572">
-        <dmn:inputExpression id="_9018C401-5DEC-4E47-B311-1B023E69D570" typeRef="string">
+    <dmn:decisionTable id="_432C007D-36B5-4712-940B-60DD5EA23B29" hitPolicy="COLLECT" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_7E51954A-E60F-4CF8-8C7C-B7610909D1EA">
+        <dmn:inputExpression id="_53093ADA-F68D-4BB1-ADF5-5BA9978462A6" typeRef="string">
           <dmn:text>WorkFlow.activeTaskName</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_CD9C5470-4D42-4DBD-909C-EDDD96411ACB">
-        <dmn:inputExpression id="_93546072-9DC9-49BA-93EA-BD2E9E33879D" typeRef="string">
+      <dmn:input id="_98048F9C-7242-4ED6-949D-6863AABFAE3D">
+        <dmn:inputExpression id="_2F69A6B7-50CA-45E2-981B-28D46EF25634" typeRef="string">
           <dmn:text>WorkFlow.activeTaskStatusId</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:input id="_2899CEA7-7AA8-4D2D-83A7-D28739EE64CE">
-        <dmn:inputExpression id="_E3B1B487-7FCC-40D4-B548-5AD602E88274" typeRef="string">
+      <dmn:input id="_9BB96787-1663-438A-9503-B3925F943A96">
+        <dmn:inputExpression id="_60B4C9E0-72E5-4282-BD15-39D2866CF20A" typeRef="string">
           <dmn:text>WorkFlow.statusId</dmn:text>
         </dmn:inputExpression>
       </dmn:input>
-      <dmn:output id="_55B2B0D4-A91A-4904-BBE6-466CEAEE83CE" name="nextAsignee" typeRef="string"/>
-      <dmn:output id="_A5F0C455-A01D-4926-A0AA-C56E72C6D203" name="nextTaskName" typeRef="string"/>
+      <dmn:output id="_6CCF0ED8-4AE9-424E-BC21-58DAC9CFF674" name="nextAssignee" typeRef="string"/>
+      <dmn:output id="_463C60BC-7502-4126-B2DD-FD290BEC4A73" name="nextFlowName" typeRef="string"/>
+      <dmn:output id="_3ECE6FE4-FDD9-45AE-8842-97994167FDC9" name="nextStatusId" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
-      <dmn:rule id="_A4BF5135-50C3-4069-B5AA-5574718EA7D0">
-        <dmn:inputEntry id="_D2E555D6-B0C3-4D29-9728-4D455B5C8A68">
+      <dmn:rule id="_F03CCD6C-CB93-48DF-95BA-CF963A3E1D09">
+        <dmn:inputEntry id="_FCF63D00-EADB-4152-8C5B-433847F7BB74">
           <dmn:text>"First step"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_85986BCA-4AAE-4E72-8199-40CF42E76358">
+        <dmn:inputEntry id="_7FCA3078-35DA-4194-9EFD-7E0ADC6834A9">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_195B07F9-5DBD-4CD7-A721-36A360090D2C">
+        <dmn:inputEntry id="_8B2CCFEF-F16E-4B68-80AA-6126211EDE89">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_705D08CE-A589-494E-8148-B6441C33C438">
-          <dmn:text>"ltdadmin"</dmn:text>
+        <dmn:outputEntry id="_46A7A21C-6044-4E11-B25E-77572F69229B">
+          <dmn:text>["ltdadmin"]</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_E20F0481-D672-4668-8A46-CD071A8B7794">
+        <dmn:outputEntry id="_AD5B05C3-5A10-47DE-B3F8-809BE415D25A">
           <dmn:text>"Second step"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_30151F96-0ACC-4141-95E2-E4BB4CF97181">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
         </dmn:annotationEntry>
       </dmn:rule>
-      <dmn:rule id="_7ECDE17C-11E7-4D0A-B665-2315E76486C7">
-        <dmn:inputEntry id="_E152E56C-E30A-45CC-AC75-6AC0471E2EB8">
-          <dmn:text>"Second step"</dmn:text>
+      <dmn:rule id="_C480851C-ACA9-4006-AEB4-D3939AFE0162">
+        <dmn:inputEntry id="_367AEE8D-68C6-4F38-96A8-B2A2E2AD070D">
+          <dmn:text>"First step"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_396DA908-0370-4796-A1D2-CB93D6173C2D">
+        <dmn:inputEntry id="_27A3E5AC-451A-4412-B0D8-C8CB0E65E9A0">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_87F99CE9-AE25-4B25-98CF-6C7952E4B116">
+        <dmn:inputEntry id="_AE158DCE-BA18-4B97-85DD-E371AFE85282">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_7BE52938-DA92-4DF9-BBC1-FA17F4F56266">
-          <dmn:text>"externaluser"</dmn:text>
+        <dmn:outputEntry id="_AD7FCA6B-2FE2-4799-A9E8-5113D82E3643">
+          <dmn:text>["bizadmin"]</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_6B9C21BA-C994-4097-8C49-C9737F73BDEE">
-          <dmn:text>"Third step"</dmn:text>
+        <dmn:outputEntry id="_1CBE3DF2-13B6-4EF9-81DF-F1014DB93F70">
+          <dmn:text>"Another second step"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_510831FD-69EA-4D44-BBD5-99698D10FC25">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C6ECEEAC-15E2-49F8-984D-CFD2E93BA831">
+        <dmn:inputEntry id="_7843BC77-BFF5-4BFB-8CD2-2DFC364672B2">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_635DB782-C886-46CC-93C3-141C938E5A17">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9F233241-4B93-41B4-BC9C-A089841DDD71">
+          <dmn:text>"WEPR_PLANNING"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_B4989DD0-28F0-4CC0-A82D-E22521B3486A">
+          <dmn:text>["admin"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_733A0F18-CC1C-4580-B383-BA2F9D121B22">
+          <dmn:text>"First step"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_580C4ACE-C87A-42C2-BE89-9CE504C124E6">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
           <dmn:text/>
@@ -95,11 +128,12 @@
     <dmndi:DMNDiagram id="_98B26244-D834-4381-AC4E-D936569AF838" name="DRG">
       <di:extension>
         <kie:ComponentsWidthsExtension>
-          <kie:ComponentWidths dmnElementRef="_0CAD049F-28CF-4AD8-AB75-99E4F70D0778">
+          <kie:ComponentWidths dmnElementRef="_432C007D-36B5-4712-940B-60DD5EA23B29">
             <kie:width>50</kie:width>
-            <kie:width>174</kie:width>
+            <kie:width>243</kie:width>
+            <kie:width>193</kie:width>
+            <kie:width>186</kie:width>
             <kie:width>100</kie:width>
-            <kie:width>150</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
             <kie:width>100</kie:width>
