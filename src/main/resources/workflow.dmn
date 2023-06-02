@@ -54,8 +54,8 @@
       <dmn:output id="_3ECE6FE4-FDD9-45AE-8842-97994167FDC9" name="nextStatusId" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
       <dmn:rule id="_F03CCD6C-CB93-48DF-95BA-CF963A3E1D09">
-        <dmn:inputEntry id="_FCF63D00-EADB-4152-8C5B-433847F7BB74">
-          <dmn:text>"First step"</dmn:text>
+        <dmn:inputEntry id="_1A425D27-8755-485B-BFF4-32DDD824AA01">
+          <dmn:text>"一级审批"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_7FCA3078-35DA-4194-9EFD-7E0ADC6834A9">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
@@ -63,36 +63,13 @@
         <dmn:inputEntry id="_8B2CCFEF-F16E-4B68-80AA-6126211EDE89">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_46A7A21C-6044-4E11-B25E-77572F69229B">
-          <dmn:text>["ltdadmin"]</dmn:text>
+        <dmn:outputEntry id="_CBB0A972-CD13-45C5-AD6C-87973F0A2FFA">
+          <dmn:text>["MANAGER"]</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_AD5B05C3-5A10-47DE-B3F8-809BE415D25A">
-          <dmn:text>"Second step"</dmn:text>
+        <dmn:outputEntry id="_4AD6F546-C102-479D-B70E-8B2F0C3366DA">
+          <dmn:text>"二级审批"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_30151F96-0ACC-4141-95E2-E4BB4CF97181">
-          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:annotationEntry>
-          <dmn:text/>
-        </dmn:annotationEntry>
-      </dmn:rule>
-      <dmn:rule id="_C480851C-ACA9-4006-AEB4-D3939AFE0162">
-        <dmn:inputEntry id="_367AEE8D-68C6-4F38-96A8-B2A2E2AD070D">
-          <dmn:text>"First step"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_27A3E5AC-451A-4412-B0D8-C8CB0E65E9A0">
-          <dmn:text>"WEPR_COMPLETE"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:inputEntry id="_AE158DCE-BA18-4B97-85DD-E371AFE85282">
-          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
-        </dmn:inputEntry>
-        <dmn:outputEntry id="_AD7FCA6B-2FE2-4799-A9E8-5113D82E3643">
-          <dmn:text>["bizadmin"]</dmn:text>
-        </dmn:outputEntry>
-        <dmn:outputEntry id="_1CBE3DF2-13B6-4EF9-81DF-F1014DB93F70">
-          <dmn:text>"Another second step"</dmn:text>
-        </dmn:outputEntry>
-        <dmn:outputEntry id="_510831FD-69EA-4D44-BBD5-99698D10FC25">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
@@ -109,11 +86,11 @@
         <dmn:inputEntry id="_9F233241-4B93-41B4-BC9C-A089841DDD71">
           <dmn:text>"WEPR_PLANNING"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_B4989DD0-28F0-4CC0-A82D-E22521B3486A">
-          <dmn:text>["admin"]</dmn:text>
+        <dmn:outputEntry id="_07B39AD1-CCE4-4FFA-BF44-77F68B4CA705">
+          <dmn:text>["WF_OWNER"]</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_733A0F18-CC1C-4580-B383-BA2F9D121B22">
-          <dmn:text>"First step"</dmn:text>
+        <dmn:outputEntry id="_68E3AB9D-4D5F-4AE0-A5DD-62AF359C6B0C">
+          <dmn:text>"一级审批"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_580C4ACE-C87A-42C2-BE89-9CE504C124E6">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
