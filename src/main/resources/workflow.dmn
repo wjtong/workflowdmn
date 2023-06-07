@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_C7DD06AE-F36B-4625-9490-27F6C1A508EB" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_FC0E61D9-46EE-4750-BFF6-CA68BBD30C6D" name="workflow" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_C7DD06AE-F36B-4625-9490-27F6C1A508EB">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_862CE8BC-BDF4-4DF3-A60B-AF6DA0EB2B35" name="tWorkFlow" isCollection="false">
+    <dmn:itemComponent id="_63475CB5-01FF-4459-BF7D-9224EFD8D21A" name="statusId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_4596370F-7235-4E84-B6BB-EBF0F1FCCFDE" name="activeTaskName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C10FAB11-D9B4-4551-A2EB-723601D2DFBE" name="activeTaskStatusId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:itemDefinition id="_7E6CD67E-8346-469F-A205-8A814B9E6318" name="tNextFlow" isCollection="true">
+    <dmn:itemComponent id="_188FEAE9-64E3-490F-B5A4-9C3780DA9687" name="nextFlowName" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_E43DC1A1-AD73-47CC-A328-71A86CBD2D81" name="nextAssignee" isCollection="true">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_3FDF5523-89DB-44F2-8A40-E6F17145B9A2" name="nextStatusId" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" name="WorkFlow">
+    <dmn:extensionElements/>
+    <dmn:variable id="_A069D440-5D76-49ED-B5AF-1BAFF663828E" name="WorkFlow" typeRef="tWorkFlow"/>
+  </dmn:inputData>
+  <dmn:decision id="_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" name="NextFlow">
+    <dmn:extensionElements/>
+    <dmn:variable id="_3E7169C4-5D18-423C-890B-02B6CD20613A" name="NextFlow" typeRef="tNextFlow"/>
+    <dmn:informationRequirement id="_235D7CFC-7259-49C9-A357-5E0CB7516627">
+      <dmn:requiredInput href="#_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_432C007D-36B5-4712-940B-60DD5EA23B29" hitPolicy="COLLECT" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_7E51954A-E60F-4CF8-8C7C-B7610909D1EA">
+        <dmn:inputExpression id="_53093ADA-F68D-4BB1-ADF5-5BA9978462A6" typeRef="string">
+          <dmn:text>WorkFlow.activeTaskName</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_98048F9C-7242-4ED6-949D-6863AABFAE3D">
+        <dmn:inputExpression id="_2F69A6B7-50CA-45E2-981B-28D46EF25634" typeRef="string">
+          <dmn:text>WorkFlow.activeTaskStatusId</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_9BB96787-1663-438A-9503-B3925F943A96">
+        <dmn:inputExpression id="_60B4C9E0-72E5-4282-BD15-39D2866CF20A" typeRef="string">
+          <dmn:text>WorkFlow.statusId</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_6CCF0ED8-4AE9-424E-BC21-58DAC9CFF674" name="nextAssignee" typeRef="string"/>
+      <dmn:output id="_463C60BC-7502-4126-B2DD-FD290BEC4A73" name="nextFlowName" typeRef="string"/>
+      <dmn:output id="_3ECE6FE4-FDD9-45AE-8842-97994167FDC9" name="nextStatusId" typeRef="string"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_F03CCD6C-CB93-48DF-95BA-CF963A3E1D09">
+        <dmn:inputEntry id="_1A425D27-8755-485B-BFF4-32DDD824AA01">
+          <dmn:text>"一级审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_7FCA3078-35DA-4194-9EFD-7E0ADC6834A9">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_8B2CCFEF-F16E-4B68-80AA-6126211EDE89">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_CBB0A972-CD13-45C5-AD6C-87973F0A2FFA">
+          <dmn:text>["MANAGER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_4AD6F546-C102-479D-B70E-8B2F0C3366DA">
+          <dmn:text>"二级审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_30151F96-0ACC-4141-95E2-E4BB4CF97181">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_C6ECEEAC-15E2-49F8-984D-CFD2E93BA831">
+        <dmn:inputEntry id="_7843BC77-BFF5-4BFB-8CD2-2DFC364672B2">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_635DB782-C886-46CC-93C3-141C938E5A17">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9F233241-4B93-41B4-BC9C-A089841DDD71">
+          <dmn:text>"WEPR_PLANNING"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_07B39AD1-CCE4-4FFA-BF44-77F68B4CA705">
+          <dmn:text>["WF_OWNER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_68E3AB9D-4D5F-4AE0-A5DD-62AF359C6B0C">
+          <dmn:text>"一级审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_580C4ACE-C87A-42C2-BE89-9CE504C124E6">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_98B26244-D834-4381-AC4E-D936569AF838" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_432C007D-36B5-4712-940B-60DD5EA23B29">
+            <kie:width>50</kie:width>
+            <kie:width>243</kie:width>
+            <kie:width>193</kie:width>
+            <kie:width>186</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>100</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" dmnElementRef="_00BB37E8-0E76-4CFA-B587-FF0A19AB7C22" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="626" y="143" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" dmnElementRef="_B1FC2B47-B3DE-4A3A-B8BC-F50F1118D907" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="627" y="286" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_235D7CFC-7259-49C9-A357-5E0CB7516627" dmnElementRef="_235D7CFC-7259-49C9-A357-5E0CB7516627">
+        <di:waypoint x="676" y="168"/>
+        <di:waypoint x="677" y="311"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
