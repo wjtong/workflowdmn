@@ -53,6 +53,29 @@
       <dmn:output id="_463C60BC-7502-4126-B2DD-FD290BEC4A73" name="nextFlowName" typeRef="string"/>
       <dmn:output id="_3ECE6FE4-FDD9-45AE-8842-97994167FDC9" name="nextStatusId" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_2F34FDBD-E84B-416E-BE21-1E036B3D19B2">
+        <dmn:inputEntry id="_83DE47D2-F836-4D14-8E29-EBE5F8505593">
+          <dmn:text>"二级审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_139AD894-B3E2-4B6C-B3CD-97288E0C8224">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_208E7029-841B-477C-9B23-35A99D1EC352">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_E2440ACE-D34E-47B7-AECC-EDB70AB67711">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_70504886-59F6-4CD0-B727-5C6853FF6406">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8EFB733C-995D-443C-8A3D-1C41ABF84B54">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
       <dmn:rule id="_F03CCD6C-CB93-48DF-95BA-CF963A3E1D09">
         <dmn:inputEntry id="_1A425D27-8755-485B-BFF4-32DDD824AA01">
           <dmn:text>"一级审批"</dmn:text>
@@ -69,7 +92,7 @@
         <dmn:outputEntry id="_4AD6F546-C102-479D-B70E-8B2F0C3366DA">
           <dmn:text>"二级审批"</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_30151F96-0ACC-4141-95E2-E4BB4CF97181">
+        <dmn:outputEntry id="_AF75ECA7-21FF-4561-9A6E-C54306394A75">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
