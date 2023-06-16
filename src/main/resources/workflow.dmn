@@ -53,32 +53,170 @@
       <dmn:output id="_463C60BC-7502-4126-B2DD-FD290BEC4A73" name="nextFlowName" typeRef="string"/>
       <dmn:output id="_3ECE6FE4-FDD9-45AE-8842-97994167FDC9" name="nextStatusId" typeRef="string"/>
       <dmn:annotation name="annotation-1"/>
-      <dmn:rule id="_2F34FDBD-E84B-416E-BE21-1E036B3D19B2">
-        <dmn:inputEntry id="_83DE47D2-F836-4D14-8E29-EBE5F8505593">
-          <dmn:text>"二级审批"</dmn:text>
+      <dmn:rule id="_108EBC7A-55D5-4123-A974-9F6D727C2DD7">
+        <dmn:inputEntry id="_97A47474-5ECF-44E5-A8CB-3432B270586C">
+          <dmn:text>"调拨单运检部审批"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_139AD894-B3E2-4B6C-B3CD-97288E0C8224">
+        <dmn:inputEntry id="_B191B63D-2D3A-4F56-AEF9-6205DF106140">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:inputEntry>
-        <dmn:inputEntry id="_208E7029-841B-477C-9B23-35A99D1EC352">
+        <dmn:inputEntry id="_39A926D9-CEC4-4E7C-932A-CB0739F75852">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_E2440ACE-D34E-47B7-AECC-EDB70AB67711">
+        <dmn:outputEntry id="_3D7B79C9-CC80-4709-9A29-9E4951210BEC">
           <dmn:text/>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_70504886-59F6-4CD0-B727-5C6853FF6406">
+        <dmn:outputEntry id="_6DFCCF8C-72AF-4F6C-A8D5-729F95C09386">
           <dmn:text/>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_8EFB733C-995D-443C-8A3D-1C41ABF84B54">
+        <dmn:outputEntry id="_9A5DF22D-1189-4D9E-9CCA-BFC4CAB1DF1D">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
+          <dmn:text>"调拨单运检部审批通过,完成审批流程"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_61352849-21D0-4B9B-BB27-F2C4E9EFF9B8">
+        <dmn:inputEntry id="_A8768729-F2E3-4CE0-A55A-8F548C985654">
+          <dmn:text>"调拨单领导审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_51496EBC-A2C5-4573-8F63-6C782AB39794">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_777868AB-60F5-41C9-BCA8-3C3336FBB31F">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_EA32BF90-E371-4208-AAB8-81E6E7C7C02A">
+          <dmn:text>["ADMIN"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_DEE3D869-AF82-4B30-BA84-ACFABB497AE3">
+          <dmn:text>"调拨单运检部审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9E021FD1-15E6-4523-9AD6-F55B987748C7">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"调拨单领导审批通过,开始运检部审批"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_A0D080C6-047F-416E-9457-8A2AA87EA821">
+        <dmn:inputEntry id="_45F2526F-919E-4FDF-AAD4-CEFB11C96889">
+          <dmn:text>"调拨单职员审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_EF9A4CB5-77A2-4A9E-91D9-EECDBB015682">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_9E1D0404-4E4F-427D-8AE6-8FCA9B17D266">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_85AD1A27-935A-495D-8CFB-2306285E1AE8">
+          <dmn:text>["MANAGER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_A1878F5F-8317-406F-9ED2-F0B46B7C56F7">
+          <dmn:text>"调拨单领导审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_E1534CB8-38BF-452B-A08F-864441E4D5E5">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"调拨单职员审批通过,开始领导审批"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_0D6D73FA-100C-43F3-BCDC-6E98E316AFB5">
+        <dmn:inputEntry id="_1FA31576-04DF-440E-8828-13083B44B3CF">
+          <dmn:text>"RF_TRANSFER_SHIPMENT"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_DA5F57DB-F22D-4053-B4FD-6E11A049A285">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_AD2F3EB2-0ED8-4497-841E-AF7B3880F07D">
+          <dmn:text>"WEPR_PLANNING"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_C3E0C9EC-0C95-41F8-AFD9-BA9772F17739">
+          <dmn:text>["WF_OWNER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C2FC51CE-B493-486C-B8E0-0FA7D46A2500">
+          <dmn:text>"调拨单职员审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_9C62FD95-6A74-4F4B-BD4C-F6E46FFF58BA">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"调拨单提交,开始职员审批"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_0ECDFFD2-B630-4D39-A8D2-3A67DCF2536D">
+        <dmn:inputEntry id="_66A46AB9-3B7F-47DA-8B0C-6666C77815FA">
+          <dmn:text>"出库领导审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_C805F54D-3341-45DD-BDAA-53936BB445F2">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_6CA3E0AD-298A-40DB-B4A3-45BB23767CAE">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_99F3455D-BD42-4C8A-8ADF-E9DF10A4A457">
           <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_799C0F07-E20B-487E-A2FB-2234C0CE06C1">
+          <dmn:text/>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_793B5109-6140-4299-AE82-D5AEF3B89BF6">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"出库单领导审批通过,完成审批流程"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_86CFBA5D-D6D7-48F7-933D-678B7C1E3D08">
+        <dmn:inputEntry id="_C81521C4-A02C-4157-A87A-F8630542E9E6">
+          <dmn:text>"出库职员审批"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_10CCE336-2BFA-4CA1-8C94-43D171A7DA19">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_178021A5-5C01-47E1-AB49-C4185C75F0E7">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_7B126B30-1333-4BCE-9A82-825B0C901E3C">
+          <dmn:text>["MANAGER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_74D4A266-FF3E-4911-9656-2144F57B1001">
+          <dmn:text>"出库领导审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_58C3AD74-BCC3-45C1-80C9-C89F1FFF451C">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"出库单职员审批通过,开始领导审批"</dmn:text>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_2F34FDBD-E84B-416E-BE21-1E036B3D19B2">
+        <dmn:inputEntry id="_B54F700E-E658-44C1-8DBB-314B9D89DF95">
+          <dmn:text>"RF_OUTGOING_SHIPMENT"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_4F615BB0-C286-48A4-BC77-5951D96C86C9">
+          <dmn:text>"NA"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_147FAFF4-A958-439D-88EF-EFABC3F1AF76">
+          <dmn:text>"WEPR_PLANNING"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_5C7EB45E-4AD2-451C-B543-2E9984F17210">
+          <dmn:text>["WF_OWNER"]</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_C947CC5E-8AF5-4069-AB95-0E0079E2FA3E">
+          <dmn:text>"出库职员审批"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:outputEntry id="_8E664B6F-1FE6-4103-B1D9-182A417C6A1E">
+          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text>"出库单提交,开始职员审批"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_F03CCD6C-CB93-48DF-95BA-CF963A3E1D09">
-        <dmn:inputEntry id="_1A425D27-8755-485B-BFF4-32DDD824AA01">
-          <dmn:text>"一级审批"</dmn:text>
+        <dmn:inputEntry id="_CB537A9A-C6E8-42AA-8B14-30A9B7AC1757">
+          <dmn:text>"入库职员审批"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_7FCA3078-35DA-4194-9EFD-7E0ADC6834A9">
           <dmn:text>"WEPR_COMPLETE"</dmn:text>
@@ -86,22 +224,22 @@
         <dmn:inputEntry id="_8B2CCFEF-F16E-4B68-80AA-6126211EDE89">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:inputEntry>
-        <dmn:outputEntry id="_CBB0A972-CD13-45C5-AD6C-87973F0A2FFA">
-          <dmn:text>["MANAGER"]</dmn:text>
+        <dmn:outputEntry id="_9A1CBEE5-516E-4791-8BCA-047419C72FA7">
+          <dmn:text/>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_4AD6F546-C102-479D-B70E-8B2F0C3366DA">
-          <dmn:text>"二级审批"</dmn:text>
+        <dmn:outputEntry id="_AE0A1B67-8622-481A-BDD3-19CB2BBD98BD">
+          <dmn:text/>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_AF75ECA7-21FF-4561-9A6E-C54306394A75">
-          <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
+        <dmn:outputEntry id="_7AAFC172-929B-4AC8-A836-EDC522C3DA39">
+          <dmn:text>"WEPR_COMPLETE"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>"入库单职员审批通过,完成审批流程"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
       <dmn:rule id="_C6ECEEAC-15E2-49F8-984D-CFD2E93BA831">
-        <dmn:inputEntry id="_7843BC77-BFF5-4BFB-8CD2-2DFC364672B2">
-          <dmn:text>"NA"</dmn:text>
+        <dmn:inputEntry id="_5414AB95-2306-4625-839C-6B1B6CCEDA2F">
+          <dmn:text>"RF_INCOMING_SHIPMENT"</dmn:text>
         </dmn:inputEntry>
         <dmn:inputEntry id="_635DB782-C886-46CC-93C3-141C938E5A17">
           <dmn:text>"NA"</dmn:text>
@@ -112,14 +250,14 @@
         <dmn:outputEntry id="_07B39AD1-CCE4-4FFA-BF44-77F68B4CA705">
           <dmn:text>["WF_OWNER"]</dmn:text>
         </dmn:outputEntry>
-        <dmn:outputEntry id="_68E3AB9D-4D5F-4AE0-A5DD-62AF359C6B0C">
-          <dmn:text>"一级审批"</dmn:text>
+        <dmn:outputEntry id="_90D6AC77-65DC-4551-9A7B-6C8850DB42F7">
+          <dmn:text>"入库职员审批"</dmn:text>
         </dmn:outputEntry>
         <dmn:outputEntry id="_580C4ACE-C87A-42C2-BE89-9CE504C124E6">
           <dmn:text>"WEPR_IN_PROGRESS"</dmn:text>
         </dmn:outputEntry>
         <dmn:annotationEntry>
-          <dmn:text/>
+          <dmn:text>"入库单提交,开始职员审批"</dmn:text>
         </dmn:annotationEntry>
       </dmn:rule>
     </dmn:decisionTable>
@@ -133,10 +271,10 @@
             <kie:width>243</kie:width>
             <kie:width>193</kie:width>
             <kie:width>186</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
-            <kie:width>100</kie:width>
+            <kie:width>146</kie:width>
+            <kie:width>134</kie:width>
+            <kie:width>182</kie:width>
+            <kie:width>322</kie:width>
           </kie:ComponentWidths>
         </kie:ComponentsWidthsExtension>
       </di:extension>
